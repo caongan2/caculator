@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="maytinh.css">
+</head>
+<body>
+<fieldset style="width: 420px; background-color: gray">
+    <legend>Caculator</legend>
+<table style="width: 400px; height: 120px">
+    <tr>
+        <td colspan="4"><input  type="text" id="output" style="width: 400px; background-color: aqua" ></td>
+    </tr>
+
+    <tr>
+        <td><button type="button" onclick="setoutput(1)" style="background-color: aqua">1</button></td>
+        <td><button type="button" onclick="setoutput(2)" style="background-color: aqua">2</button></td>
+        <td><button type="button" onclick="setoutput(3)" style="background-color: aqua">3</button></td>
+        <td><button type="button" onclick="setoutput('+')" style="background-color: coral">+</button></td>
+    </tr>
+    <tr>
+        <td><button type="button" onclick="setoutput(4)" style="background-color: aqua">4</button></td>
+        <td><button type="button" onclick="setoutput(5)" style="background-color: aqua">5</button></td>
+        <td><button type="button" onclick="setoutput(6)" style="background-color: aqua">6</button></td>
+        <td><button type="button" onclick="setoutput('-')" style="background-color: coral">-</button></td>
+    </tr>
+    <tr>
+        <td><button type="button" onclick="setoutput(7)" style="background-color: aqua">7</button></td>
+        <td><button type="button" onclick="setoutput(8)" style="background-color: aqua">8</button></td>
+        <td><button type="button" onclick="setoutput(9)" style="background-color: aqua">9</button></td>
+        <td><button type="button" onclick="setoutput('*')" style="background-color: coral">x</button></td>
+    </tr>
+    <tr>
+        <td><button type="button" onclick= reset('C') style="background-color: aqua">C</button></td>
+        <td><button type="button" onclick="setoutput(0)" style="background-color: aqua">0</button></td>
+        <td><button type="button" onclick="calculator('=')" style="background-color: aqua">=</button></td>
+        <td><button type="button" onclick="setoutput('/')" style="background-color: coral">÷</button></td>
+    </tr>
+</table>
+</fieldset>
+<script>
+    function setoutput(value){
+        let output = document.getElementById('output').value += value
+    }
+    function calculator(value){
+        let output = document.getElementById('output').value
+        result = eval(output)
+        document.getElementById('output').value += value + result
+    }
+    function  reset(){
+        document.getElementById('output').value = "";
+    }
+</script>
+</body>
+</html>
